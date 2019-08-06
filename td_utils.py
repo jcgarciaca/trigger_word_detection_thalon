@@ -68,16 +68,31 @@ def load_raw_audio_thalon_list():
     activates = []
     backgrounds = []
     negatives = []
-    for filename in os.listdir("./thalon_audios/filtered"):
+    for filename in os.listdir("./thalon_audios/hola_thalon/V2_me_stereo/edited"):
         if filename.endswith("wav"):
-            activates.append("./thalon_audios/filtered/"+filename)
-    for filename in os.listdir("./database/wav_resampling/backgrounds_10sec"):
+            activates.append("./thalon_audios/hola_thalon/V2_me_stereo/edited/"+filename)
+    for filename in os.listdir("./database/my_database/background_10sec"):
         if filename.endswith("wav"):
-            backgrounds.append("./database/wav_resampling/backgrounds_10sec/"+filename)
+            backgrounds.append("./database/my_database/background_10sec/"+filename)
     for filename in os.listdir("./database/wav_resampling/general_lt_1sec"):
         if filename.endswith("wav"):
             negatives.append("./database/wav_resampling/general_lt_1sec/"+filename)
     return activates, negatives, backgrounds
+
+# def load_raw_audio_thalon_list_test():
+#     activates = []
+#     backgrounds = []
+#     negatives = []
+#     for filename in os.listdir("./audio_test"):
+#         if filename.endswith("wav"):
+#             activates.append("./audio_test/"+filename)
+#     for filename in os.listdir("./database/wav_resampling/backgrounds_10sec"):
+#         if filename.endswith("wav"):
+#             backgrounds.append("./database/wav_resampling/backgrounds_10sec/"+filename)
+#     for filename in os.listdir("./database/wav_resampling/general_lt_1sec"):
+#         if filename.endswith("wav"):
+#             negatives.append("./database/wav_resampling/general_lt_1sec/"+filename)
+#     return activates, negatives, backgrounds
 
 def load_raw_data(audio_names):
     audio_list = []
@@ -88,7 +103,7 @@ def load_raw_data(audio_names):
     return audio_list        
 
 def get_load_raw_audio_thalon_length():
-    len_activates = len(os.listdir("./thalon_audios/filtered"))
-    len_backgrounds = len(os.listdir("./database/wav_resampling/backgrounds_10sec"))
+    len_activates = len(os.listdir("./thalon_audios/hola_thalon/V2_me_stereo/edited"))
+    len_backgrounds = len(os.listdir("./database/my_database/background_10sec"))
     len_negatives = len(os.listdir("./database/wav_resampling/general_lt_1sec"))
     return len_activates, len_negatives, len_backgrounds
